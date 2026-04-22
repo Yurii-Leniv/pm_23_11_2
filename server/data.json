@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "name": "React",
+    "learned": true
+  },
+  {
+    "id": 2,
+    "name": "JavaScript",
+    "learned": true
+  },
+  {
+    "id": 3,
+    "name": "Node.js",
+    "learned": false
+  },
+  {
+    "id": 4,
+    "name": "SCSS",
+    "learned": true
+  },
+  {
+    "id": 5,
+    "name": "Angular",
+    "learned": false
+  },
+  {
+    "id": 6,
+    "name": "java",
+    "learned": false
+  },
+  {
+    "id": 7,
+    "name": "Kotlin",
+    "learned": false
+  }
+]
