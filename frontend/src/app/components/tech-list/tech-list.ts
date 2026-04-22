@@ -1,27 +1,41 @@
-import { Component } from '@angular/core';
-import { TechItemComponent } from '../tech-item/tech-item'; // Шлях до дочірнього
+import { Component, OnInit } from '@angular/core';
+import { TechItemComponent } from '../tech-item/tech-item';
+import { TechService, Tech } from '../../services/tech';
 
 @Component({
   selector: 'app-tech-list',
   standalone: true,
-  imports: [TechItemComponent], // Обов'язково імпортуємо дочірній компонент!
+  imports: [TechItemComponent],
   templateUrl: './tech-list.html',
   styleUrl: './tech-list.scss'
 })
-export class TechListComponent {
-  technologies = [
-    { id: 1, name: 'React', learned: true },
-    { id: 2, name: 'JavaScript', learned: true },
-    { id: 3, name: 'Node.js', learned: false },
-    { id: 4, name: 'SCSS', learned: true },
-    { id: 5, name: 'Angular', learned: false }
-  ];
+export class TechListComponent implements OnInit {
+  technologies: Tech[] = [];
 
-  // Ця функція спрацює, коли дочірній компонент надішле подію
+  constructor(private techService: TechService) {}
+
+  // Цей метод має автоматично запуститися при відкритті сторінки
+  ngOnInit() {
+    console.log('1. Angular намагається отримати дані...');
+
+    this.techService.getTechs().subscribe({
+      next: (data) => {
+        console.log('2. Дані успішно отримані з сервера:', data);
+        this.technologies = data;
+      },
+      error: (err) => console.error('Помилка HTTP:', err)
+    });
+  }
+
   handleToggle(id: number) {
     const tech = this.technologies.find(t => t.id === id);
     if (tech) {
       tech.learned = !tech.learned;
+
+      this.techService.updateTechs(this.technologies).subscribe({
+        next: (response) => console.log('Успіх збереження:', response),
+        error: (err) => console.error('Помилка збереження:', err)
+      });
     }
   }
 }

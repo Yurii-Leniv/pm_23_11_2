@@ -1,8 +1,8 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
+import { ApplicationConfig } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http'; // <-- Додали цей імпорт
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideBrowserGlobalErrorListeners(),
-    
+    provideHttpClient() // <-- Увімкнули клієнт тут
   ]
 };
