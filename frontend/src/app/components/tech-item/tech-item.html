@@ -1,0 +1,13 @@
+<div class="tech-card" [class.learned]="tech.learned">
+  <h3>{{ tech.name }}</h3>
+
+  @if (tech.learned) {
+    <span class="status learned">✔ Опановано</span>
+  } @else {
+    <span class="status process">⏳ В процесі</span>
+  }
+
+  <button (click)="onToggle()">
+    {{ tech.learned ? 'Повторити' : 'Вивчити' }}
+  </button>
+</div>
