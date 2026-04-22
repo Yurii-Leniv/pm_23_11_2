@@ -1,13 +1,12 @@
-<div class="app-wrapper">
-  <header class="main-header">
-    <h1>{{ title }}</h1>
-  </header>
+<header style="background: #333; color: white; padding: 10px; display: flex; justify-content: space-between;">
+  <h1>Full-Stack Tracker</h1>
+  <button (click)="logout()" style="background: red; color: white; border: none; padding: 5px 10px; cursor: pointer;">Вийти</button>
+</header>
 
-  <main class="content-area">
-    <app-tech-list></app-tech-list>
-  </main>
+<main>
+  <router-outlet></router-outlet>
+</main>
 
-  <footer class="main-footer">
-    <p>Виконав студент 2 курсу</p>
-  </footer>
-</div>
+<footer style="text-align: center; padding: 20px; background: #f4f4f4;">
+  Виконав студент 2 курсу Юрій
+</footer>

@@ -1,8 +1,11 @@
 import { ApplicationConfig } from '@angular/core';
-import { provideHttpClient } from '@angular/common/http'; // <-- Додали цей імпорт
+import { provideRouter } from '@angular/router';
+import { routes } from './app.routes';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideHttpClient() // <-- Увімкнули клієнт тут
+    provideRouter(routes), // Додаємо маршрутизацію
+    provideHttpClient()
   ]
 };

@@ -1,13 +1,17 @@
 import { Component } from '@angular/core';
-import { TechListComponent } from './components/tech-list/tech-list'; // Додали імпорт
+import { RouterOutlet, Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [TechListComponent], // Додали в imports
-  templateUrl: './app.html',
-  styleUrl: './app.scss'
+  imports: [RouterOutlet],
+  templateUrl: './app.html'
 })
-export class App {
-  title = 'Лабораторна робота №2';
+export class AppComponent {
+  constructor(private router: Router) {}
+
+  logout() {
+    localStorage.removeItem('isLoggedIn');
+    this.router.navigate(['/login']);
+  }
 }
