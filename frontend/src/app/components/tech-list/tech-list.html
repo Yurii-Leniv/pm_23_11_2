@@ -1,4 +1,7 @@
 <div class="list-container">
+  <app-tech-form (addTech)="onAddTech($event)"></app-tech-form>
+
+  <hr>
   <h2>Мій стек технологій</h2>
 
   @for (item of technologies; track item.id) {

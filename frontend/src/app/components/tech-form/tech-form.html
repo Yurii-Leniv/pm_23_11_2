@@ -1,0 +1,26 @@
+<div class="form-container">
+  <h3>Додати нову технологію</h3>
+
+  <form [formGroup]="techForm" (ngSubmit)="onSubmit()">
+    <div class="input-group">
+      <input
+        type="text"
+        formControlName="techName"
+        placeholder="Наприклад: Python, Docker..."
+      >
+
+      @if (techForm.get('techName')?.invalid && techForm.get('techName')?.touched) {
+        <div class="error-messages">
+          @if (techForm.get('techName')?.hasError('required')) {
+            <small>Назва технології обов'язкова!</small>
+          }
+          @if (techForm.get('techName')?.hasError('minlength')) {
+            <small>Назва має містити щонайменше 2 символи.</small>
+          }
+        </div>
+      }
+    </div>
+
+    <button type="submit" [disabled]="techForm.invalid">Додати у стек</button>
+  </form>
+</div>
