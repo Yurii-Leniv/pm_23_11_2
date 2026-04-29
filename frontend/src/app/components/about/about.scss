@@ -1,0 +1,11 @@
+.resume-section { margin-bottom: 1.75rem; }
+.section-header-toggle { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+.section-title { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; flex-grow: 1; }
+.icon-circle { border-radius: 50%; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; background-color: #333; color: white; font-size: 18px; }
+.section-title h2 { font-weight: 700; color: #333; margin: 0; font-size: 30px; }
+.experience-list { display: grid; gap: clamp(1.5rem, 3vw, 2rem); padding-top: 1rem; }
+.experience-header { display: flex; justify-content: space-between; align-items: baseline; }
+.experience-title { margin: 0; font-weight: 800; text-transform: uppercase; font-size: 1.2rem; }
+.experience-date { font-weight: 700; color: #333; }
+.experience-company { margin: 0.3rem 0 1rem; font-style: italic; color: #333333; font-weight: 600; }
+.experience-description { margin: 0; color: #444; line-height: 1.5; }

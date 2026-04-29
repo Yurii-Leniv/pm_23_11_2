@@ -1,0 +1,19 @@
+.skills-header-toggle { display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem; }
+.skills-heading { display: flex; align-items: center; gap: 0.75rem; margin: 0 0 1.5rem; flex-grow: 1; }
+.skills-heading__icon { border-radius: 50%; display: flex; justify-content: center; align-items: center; flex: 0 0 36px; width: 36px; height: 36px; background-color: #333; color: #fff; font-size: 1.2rem; }
+.skills-heading__title { font-weight: 700; color: #333; margin: 0; text-transform: uppercase; letter-spacing: 0.08em; font-size: 1.95rem; white-space: nowrap; }
+.skills-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem 3rem; max-width: 570px; padding-bottom: 2rem; }
+.skill { display: grid; grid-template-columns: 1fr 110px; align-items: center; gap: .75rem; }
+.skill-label { white-space: nowrap; font-weight: 700; color: #333; }
+.skill-bar { height: 12px; border: 2px solid #333; border-radius: 999px; padding: 2px; position: relative; overflow: hidden; }
+.skill-fill { display: block; height: 100%; border-radius: 999px; background: #333; }
+
+.extra-sections { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem 4rem; margin-top: 2rem; max-width: 720px; }
+.extra-block { display: flex; flex-direction: column; gap: 0.75rem; }
+.section-title { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.icon-circle { border-radius: 50%; display: flex; justify-content: center; align-items: center; width: 40px; height: 40px; background-color: #333; color: white; font-size: 18px; }
+.section-title h2 { font-weight: 700; color: #333; margin: 0; font-size: 30px; }
+.extra-list { list-style: disc; margin: 0; padding-left: 1.5rem; display: block; }
+.extra-list li { color: #333; font-weight: 700; font-size: 1.2rem; line-height: 1.6; }
+.extra-list--language { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem 2rem; padding-left: 1.2rem; list-style: none; }
+.extra-list--language li { font-weight: 700; text-transform: uppercase; white-space: nowrap; }

@@ -16,6 +16,6 @@ export class LoginComponent {
 
   login() {
     localStorage.setItem('isLoggedIn', 'true');
-    this.router.navigate(['/dashboard']);
+    this.router.navigate(['/resume']);
   }
 }

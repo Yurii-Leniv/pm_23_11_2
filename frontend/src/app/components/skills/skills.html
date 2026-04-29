@@ -1,0 +1,67 @@
+<section class="skills">
+  <div class="skills-header-toggle">
+    <div class="skills-heading">
+      <span class="skills-heading__icon"><i class="bi bi-pie-chart-fill"></i></span>
+      <h2 class="skills-heading__title">Skills</h2>
+    </div>
+  </div>
+
+  <form [formGroup]="techForm" (ngSubmit)="onSubmit()" class="mb-4 d-flex gap-2">
+    <div class="flex-grow-1">
+      <input
+        type="text"
+        formControlName="techName"
+        class="form-control"
+        [class.is-invalid]="techForm.get('techName')?.invalid && techForm.get('techName')?.touched"
+        placeholder="Додати навичку..."
+        style="border: 2px solid #333; border-radius: 8px; padding: 10px;">
+    </div>
+    <button
+      type="submit"
+      [disabled]="techForm.invalid"
+      class="btn btn-dark"
+      style="border-radius: 8px; font-weight: bold; background: #333; min-width: 100px;">
+      Додати
+    </button>
+  </form>
+
+  <div class="skills-grid">
+    @for (tech of techList; track tech.id) {
+      <div class="skill" (click)="toggleTech(tech.id)" style="cursor: pointer;" title="Клікніть, щоб змінити статус">
+        <span class="skill-label">{{ tech.name }}</span>
+        <div class="skill-bar">
+          <span class="skill-fill" [style.width]="tech.learned ? '100%' : '50%'"></span>
+        </div>
+      </div>
+    } @empty {
+      <p style="color: #666; font-style: italic;">Список навичок порожній. Спробуйте щось додати!</p>
+    }
+  </div>
+</section>
+
+<div class="extra-sections">
+  <div class="extra-block">
+    <div class="section-title">
+      <div class="icon-circle"><i class="fa-solid fa-earth-americas"></i></div>
+      <h2>LANGUAGE</h2>
+    </div>
+    <ul class="extra-list extra-list--language">
+      <li>English</li>
+      <li>French</li>
+      <li>Spanish</li>
+      <li>German</li>
+    </ul>
+  </div>
+
+  <div class="extra-block">
+    <div class="section-title">
+      <div class="icon-circle"><i class="fa-solid fa-flag-checkered"></i></div>
+      <h2>HOBBIES</h2>
+    </div>
+    <ul class="extra-list">
+      <li>Reading Books</li>
+      <li>Traveling</li>
+      <li>Playing Chess</li>
+    </ul>
+  </div>
+</div>
